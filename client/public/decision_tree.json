@@ -1,0 +1,282 @@
+{
+  "start": {
+    "question": "Is your problem requires intelligence to solve?",
+    "question_info": "If you have no access to AI, is it possible to solve the problem with all combinations of inputs",
+    "choices": [
+      {
+        "choice": "Yes",
+        "next": "ai_based_system"
+      },
+      {
+        "choice": "No",
+        "next": "rule_based_system"
+      }
+    ]
+  },
+  "rule_based_system": {
+    "block": {
+      "type": "replace",
+      "text": "Rule based system"
+    },
+    "solution": "You can use rule based systems to solve your problem.",
+    "next": null
+  },
+  "ai_based_system": {
+    "solution": "You can use AI based system",
+    "block": {
+      "type": "replace",
+      "text": "AI System"
+    },
+    "question": "which category your problem falls into?",
+    "choices": [
+      {
+        "choice": "Question Answering",
+        "next": "generative_ai_system"
+      },
+      {
+        "choice": "Data Classification",
+        "next": "gen_ai_or_classification_algorithm"
+      },
+      {
+        "choice": "Trading Bot",
+        "next": "trading_bot"
+      }
+    ]
+  },
+  "trading_bot": {
+    "solution": "Sample project got generated",
+    "template": "stock-market-bot"
+  },
+  "data_structure_question": {
+    "question": "is the data structured or unstructured?",
+    "choices": [
+      {
+        "choice": "structured",
+        "next": "structured_data_type"
+      },
+      {
+        "choice": "unstructured",
+        "next": "etl_pipeline"
+      }
+    ]
+  },
+  "generative_ai_system": {
+    "block": {
+      "type": "replace",
+      "text": "Generative AI System"
+    },
+    "solution": "You can use Generative AI based system",
+    "question": "Is the data is complex and interdependent?",
+    "template": "react-ai-chatbot",
+    "choices": [
+      {
+        "choice": "yes",
+        "next": "fine_tuning"
+      },
+      {
+        "choice": "no",
+        "next": "rag_stages"
+      }
+    ]
+  },
+  "rag_stages": {
+    "block": {
+      "type": "append",
+      "text": "RAG Stages"
+    },
+    "solution": "You can use Retrieval Augumented Generation",
+    "title": "Stages of RAG",
+    "stages": [
+      {
+        "stage": "Indexing",
+        "block": {
+          "type": "append",
+          "parent": "RAG Stages",
+          "text": "Indexing"
+        },
+        "next": "data_structure_question"
+      },
+      {
+        "stage": "Retrieval",
+        "block": {
+          "type": "append",
+          "parent": "Indexing",
+          "text": "Retrieval"
+        },
+        "next": "retrieval"
+      },
+      {
+        "stage": "Synthesis",
+        "block": {
+          "type": "append",
+          "parent": "Retrieval",
+          "text": "Synthesis"
+        },
+        "next": null
+      }
+    ]
+  },
+  "retrieval": {
+    "solution": "Prototype the solution provided and measure the retrieval performance and answer the question",
+    "question": "Is there any Issue in retrieval performance?",
+    "choices": [
+      {
+        "choice": "Expected Documents are not retrieved, retrieval query is complex",
+        "next": "query_decomposition"
+      },
+      {
+        "choice": "Expected Documents are not retrieved, but retrieval query looks good",
+        "next": "reranking"
+      },
+      {
+        "choice": "No Issues"
+      }
+    ]
+  },
+  "reranking": {
+    "solution": "Rerank the documents after retrieval",
+    "block": {
+      "type": "append",
+      "parent": "Retrieval",
+      "text": "Reranking"
+    }
+  },
+  "query_decomposition": {
+    "solution": "Decompose the retrieval query into subqueries using AI and retrieve the documents",
+    "block": {
+      "type": "append",
+      "parent": "Retrieval",
+      "text": "Query Decomposition"
+    }
+  },
+  "etl_pipeline": {
+    "solution": "You can use a ETL pipeline to process",
+    "block": {
+      "type": "append",
+      "parent": "Indexing",
+      "text": "ETL"
+    },
+    "question": "Is the data is fixed or can be updated in runtime/periodically ?",
+    "choices": [
+      {
+        "choice": "fixed",
+        "next": "etl_data_preprocess"
+      },
+      {
+        "choice": "might get updated",
+        "next": "etl_trigger_on_update"
+      }
+    ]
+  },
+  "gen_ai_or_classification_algorithm": {
+    "solution": "You can use Generative AI / Conventional Classification Algorithms"
+  },
+  "etl_data_preprocess": {
+    "solution": "Preprocess the data (with ETL)",
+    "next": "stages_of_ingestion"
+  },
+  "etl_trigger_on_update": {
+    "solution": "Trigger ETL on each data updation",
+    "next": "stages_of_ingestion"
+  },
+  "chunking": {
+    "chunking": "Chunking is the process of dividing text into smaller pieces called chunks",
+    "question": "Do you need intelligence in chunking?",
+    "choices": [
+      {
+        "choice": "Yes",
+        "next": "semantic_chunking"
+      },
+      {
+        "choice": "No",
+        "next": null
+      }
+    ]
+  },
+  "semantic_chunking": {
+    "solution": "You can use Semantic or Agentic chunking",
+    "block": {
+      "type": "append",
+      "parent": "Chunking",
+      "text": "Semantic Chunking"
+    }
+  },
+  "parsing": {
+    "question": "Is the document contains images?",
+    "choices": [
+      {
+        "choice": "Yes",
+        "next": "image_parsing"
+      },
+      {
+        "choice": "No"
+      }
+    ]
+  },
+  "image_parsing": {
+    "solution": "You can use OCR / Vision models to extract text from images",
+    "block": {
+      "type": "append",
+      "parent": "Parsing",
+      "text": "Image Parsing with OCR / AI"
+    }
+  },
+  "stages_of_ingestion": {
+    "title": "Stages of Ingestion",
+    "block": {
+      "type": "append",
+      "parent": "ETL",
+      "text": "Stages of Ingestion"
+    },
+    "stages": [
+      {
+        "stage": "Parsing",
+        "block": {
+          "type": "append",
+          "parent": "ETL",
+          "text": "Parsing"
+        },
+        "next": "parsing"
+      },
+      {
+        "stage": "Chunking",
+        "block": {
+          "type": "append",
+          "parent": "Parsing",
+          "text": "Chunking"
+        },
+        "next": "chunking"
+      },
+      {
+        "stage": "Embedding",
+        "block": {
+          "type": "append",
+          "parent": "Chunking",
+          "text": "Embedding"
+        }
+      }
+    ]
+  },
+  "fine_tuning": {
+    "title": "Fine Tuning"
+  },
+  "structured_data_type": {
+    "question": "What is the data structure?",
+    "choices": [
+      {
+        "choice": "table",
+        "next": "llm_query_framing"
+      },
+      {
+        "choice": "graph",
+        "next": "knowledge_graphs"
+      }
+    ]
+  },
+  "llm_query_framing": {
+    "solution": "You can frame queries using LLM and get the required data"
+  },
+  "knowledge_graphs": {
+    "solution": "You can use Knowledge Graphs"
+  }
+}

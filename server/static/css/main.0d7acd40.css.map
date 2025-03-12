@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.0d7acd40.css","mappings":"AAAA,oBACE,yBAA0B,CAC1B,UAAW,CACX,UACF,CAEA,aACE,eACF","sources":["pages/SolutionBuilder/SolutionBuilder.css"],"sourcesContent":[".container .diagram {\r\n  border-top: 1px solid grey;\r\n  height: 35%;\r\n  width: 50vw;\r\n}\r\n\r\n#mermaid > svg {\r\n  max-height: 50vh;\r\n}\r\n"],"names":[],"sourceRoot":""}

@@ -1,0 +1,9 @@
+.container .diagram {
+  border-top: 1px solid grey;
+  height: 35%;
+  width: 50vw;
+}
+
+#mermaid > svg {
+  max-height: 50vh;
+}
