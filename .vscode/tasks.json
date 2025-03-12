@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Client",
+            "type": "shell",
+            "command": "powershell",
+            "args": ["-Command", "npm install; npm start"],
+            "options": {
+                "cwd": "${workspaceFolder}/client"
+            }
+        },
+        {
+            "label": "Start Server",
+            "type": "shell",
+            "command": "powershell",
+            "args": ["-Command", "poetry install; poetry run python app/main.py"],
+            "options": {
+                "cwd": "${workspaceFolder}/server"
+            }
+        },
+        {
+            "label": "Start Application",
+            "dependsOn": ["Start Client", "Start Server"]
+        }
+    ]
+}
