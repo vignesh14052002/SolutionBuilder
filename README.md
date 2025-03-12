@@ -1,7 +1,8 @@
 # Solution Builder
-Solution Builder is a tool designed to help developers frame solutions to problem statements by answering a series of questions.
+Solution Builder is a tool designed to help developers frame solutions to problem statements by answering a series of questions. Try it out [here](https://solutionbuilder.onrender.com/).
 
-![Solution Builder Demo](https://youtu.be/p3yLxKoG8m0)
+## Demo Video
+[![Solution Builder Demo](https://img.youtube.com/vi/p3yLxKoG8m0/0.jpg)](https://www.youtube.com/watch?v=p3yLxKoG8m0)
 
 ## Setup
 To setup the Solution Builder, follow these steps:
