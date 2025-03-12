@@ -12,10 +12,9 @@ Solution Builder is a tool designed to help developers frame solutions to proble
 - Template Code Generation (In progress)
 
 ## Prerequisites 📋
-- Nodejs `v20.18` or higher
-- npm `v10.8` or higher
-- Python `v3.11` or higher
-- Poetry `v1.6` or higher
+- [Nodejs](https://nodejs.org/en/download) `v20.18` or higher (NPM `v10.8` or higher)
+- [Python](https://www.python.org/downloads/) `v3.11` or higher
+- [Poetry](https://python-poetry.org/docs/#installation) `v1.6` or higher
 
 ## Setup 🛠️
 To setup the Solution Builder, follow these steps:
@@ -23,7 +22,6 @@ To setup the Solution Builder, follow these steps:
 2. Install dependencies and run application
 
 (For VSCode)
-<img src="https://img.icons8.com/?size=20&id=9OGIyU8hrxW5&format=png&color=000000" alt="VSCODE" style="vertical-align: middle;"/>
 
 - `ctrl + shift + p` -> Run Task -> Start Application
   
